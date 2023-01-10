@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    1.默认情况下使用构造方法实例化bean-->
+<!--    <bean class="online.weiyin.dao.impl.BookDaoImpl" id="bookDao" />-->
+
+<!--    2.使用静态工厂实例化bean-->
+<!--
+    factory-method : 定义工厂中获得实例的方法
+-->
+<!--    <bean class="online.weiyin.factory.order.OrderDaoFactory" id="orderDao" factory-method="getInstance" />-->
+
+<!--    3.使用实例工厂方法实例化bean-->
+<!--
+    factory-bean : 受spring控制的实例工厂bean
+-->
+<!--    <bean class="online.weiyin.factory.user.UserDaoFactory" id="userDaoFactory" />-->
+<!--    <bean factory-bean="userDaoFactory" factory-method="getInstance" id="userDao" />-->
+
+<!--    使用spring提供的factoryBean快速实例化bean-->
+    <bean class="online.weiyin.factory.user.UserDaoFactoryBean" id="userDao" />
+</beans>

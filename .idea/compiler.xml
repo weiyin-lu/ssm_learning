@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Spring_02_baseconfig" />
         <module name="Spring_01_quickstart" />
+        <module name="Spring_03_instance" />
       </profile>
     </annotationProcessing>
   </component>

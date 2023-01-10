@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--
+    class : spring控制的类的全限定名
+    id : bean的唯一名称
+    name : bean的别名，可以用逗号、分号、空格分割
+    scope : 设置当前bean是否是单例的
+-->
+    <bean class="online.weiyin.dao.impl.BookDaoImpl" id="bookDao" />
+    <bean class="online.weiyin.service.impl.BookServiceImpl" id="bookService" name="service">
+        <property name="bookDao" ref="bookDao" />
+    </bean>
+</beans>
