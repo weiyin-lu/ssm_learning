@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/Spring/Spring_01_quickstart/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/Spring_02_baseconfig/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/Spring_03_instance/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/Spring_04_lifecycle/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--
+    init-method : 设置类中的特定方法为初始化方法
+    destroy-method : 设置类中的特定方法为销毁方法，必须关闭容器才能执行到
+-->
+    <bean class="online.weiyin.dao.impl.BookDaoImpl" id="bookDao" init-method="init" destroy-method="destroy"/>
+    <bean class="online.weiyin.service.impl.BookServiceImpl" id="bookService" >
+        <property name="bookDao" ref="bookDao" />
+    </bean>
+</beans>
