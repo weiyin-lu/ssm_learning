@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/Spring/Spring_02_baseconfig/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/Spring_03_instance/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/Spring_04_lifecycle/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/Spring_05_di/pom.xml" />
       </list>
     </option>
   </component>

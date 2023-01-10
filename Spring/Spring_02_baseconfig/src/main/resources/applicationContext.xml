@@ -9,6 +9,10 @@
     name : bean的别名，可以用逗号、分号、空格分割
     scope : 设置当前bean是否是单例的
 -->
+<!--
+    name : 被注入类中的属性名
+    ref : 被注入的bean类型
+-->
     <bean class="online.weiyin.dao.impl.BookDaoImpl" id="bookDao" />
     <bean class="online.weiyin.service.impl.BookServiceImpl" id="bookService" name="service">
         <property name="bookDao" ref="bookDao" />

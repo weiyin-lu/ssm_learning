@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    使用setter注入普通类型和引用类型-->
+<!--
+    name : 被注入值的属性名，与引用类型的name一致
+    value : 被注入的常规值
+-->
+    <bean class="online.weiyin.dao.impl.BookDaoImpl" id="bookDao">
+        <property name="databaseName" value="mysql" />
+        <property name="connectionNum" value="10" />
+    </bean>
+    <bean class="online.weiyin.service.impl.BookServiceImpl" id="bookService">
+        <property name="bookDao" ref="bookDao" />
+        <property name="orderDao" ref="orderDao" />
+    </bean>
+
+<!--    使用构造器注入普通类型和引用类型-->
+<!--
+    index : 构造函数参数列表中值的顺序
+-->
+    <bean class="online.weiyin.dao.impl.OrderDaoImpl" id="orderDao">
+        <constructor-arg index="0" value="100"/>
+        <constructor-arg index="1" value="redis"/>
+    </bean>
+    <bean class="online.weiyin.service.impl.OrderServiceImpl" id="orderService" >
+        <constructor-arg name="orderDao" ref="orderDao" />
+        <constructor-arg name="bookDao" ref="bookDao" />
+    </bean>
+
+<!--    强制依赖推荐使用构造器，可选依赖推荐使用setter，两者可以混用。个人开发直接使用setter就行-->
+</beans>

@@ -10,6 +10,7 @@
         <module name="Spring_04_lifecycle" />
         <module name="Spring_02_baseconfig" />
         <module name="Spring_03_instance" />
+        <module name="Spring_05_di" />
       </profile>
     </annotationProcessing>
   </component>
