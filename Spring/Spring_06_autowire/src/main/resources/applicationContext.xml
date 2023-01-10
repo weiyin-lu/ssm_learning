@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="online.weiyin.dao.impl.BookDaoImpl" id="bookDao" />
+<!--
+    autowire : 启动自动装配属性,可以按名称、类型、构造方法等。按名称和按类型用的是setter
+-->
+    <bean class="online.weiyin.service.impl.BookServiceImpl" id="bookService" autowire="byType" />
+<!--    推荐使用按类型装配，按名称装配会导致配置文件与程序耦合。自动装配的优先级低于手动装配。-->
+</beans>

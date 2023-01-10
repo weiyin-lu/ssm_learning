@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="online.weiyin.dao.impl.ListDaoImpl" id="listDao" >
+        <property name="array">
+            <array>
+                <value>1</value>
+                <value>2</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>china</value>
+                <value>japan</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>china</value>
+                <value>japan</value>
+                <value>korea</value>
+                <value>korea</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="typeA" />
+                <entry key="2" value="typeB" />
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="name">畏因</prop>
+                <prop key="age">20</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
