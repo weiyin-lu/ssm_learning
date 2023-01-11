@@ -11,7 +11,7 @@ public class Advice {
 //    定义切入点的位置，需要依赖一个无参无返回值无逻辑的类
     @Pointcut("execution( void online.weiyin.*.*Dao.update(..) )") //切入点表达式
     private void point(){}
-
+//    另一个切入点
     @Pointcut("execution( int online.weiyin.*.*Dao.save(..) )")
     private void point2(){}
 

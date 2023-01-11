@@ -8,8 +8,7 @@ public class Demo {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         BookDao bean = context.getBean(BookDao.class);
-        bean.save();
-//        int save = bean.save();
-//        System.out.println(save);
+        String save = bean.save(10,"lu");
+        System.out.println(save);
     }
 }
