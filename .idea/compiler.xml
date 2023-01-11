@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Spring_01_quickstart" />
         <module name="Spring_08_thirddatasource" />
+        <module name="Spring_12_aop" />
         <module name="Spring_09_annotation" />
         <module name="Spring_11_SpringPlusJUnit" />
         <module name="Spring_10_SpringPlusMybatis" />
