@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Spring_15_transaction" />
         <module name="Spring_08_thirddatasource" />
         <module name="Spring_09_annotation" />
         <module name="Spring_10_SpringPlusMybatis" />
