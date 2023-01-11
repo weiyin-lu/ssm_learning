@@ -14,7 +14,7 @@ import java.util.List;
 public class Demo1 {
     public static void main(String[] args) throws IOException {
 //        常规的mybatis使用方法
-        InputStream stream = Resources.getResourceAsStream("mybatis-config.xml");
+        InputStream stream = Resources.getResourceAsStream("mybatis-config.bak");
         SqlSessionFactory build = new SqlSessionFactoryBuilder().build(stream); //整合spring的核心对象，工厂
 
         SqlSession session = build.openSession(); //第二阶段的核心，会话对象
