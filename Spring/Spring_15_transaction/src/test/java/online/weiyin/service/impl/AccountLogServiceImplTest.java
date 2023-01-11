@@ -1,29 +1,25 @@
 package online.weiyin.service.impl;
 
-import junit.framework.TestCase;
 import online.weiyin.config.SpringConfig;
-import online.weiyin.pojo.Account;
-import online.weiyin.service.AccountService;
+import online.weiyin.service.AccountLogService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.io.IOException;
-import java.math.BigDecimal;
+import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SpringConfig.class)
-public class AccountServiceImplTest extends TestCase {
+public class AccountLogServiceImplTest {
 
     @Autowired
-    AccountService accountService;
-
+    AccountLogService accountLogService;
 
     @Test
-    public void transfer() throws Exception {
-        Boolean transfer = accountService.transfer(1, 2, 1000);
-        System.out.println(transfer);
+    public void log() {
+        int log = accountLogService.log(1, 2, 1000);
+        System.out.println(log);
     }
 }
