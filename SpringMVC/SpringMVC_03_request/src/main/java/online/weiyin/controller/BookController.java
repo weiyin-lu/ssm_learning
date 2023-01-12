@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
-@RequestMapping("/book")
+@RequestMapping("/book") //本类全局前缀 拼接成/book/xxx
 public class BookController {
 
 
@@ -23,4 +23,8 @@ public class BookController {
         System.out.println("BookController update run");
         return "{'ret':'BookController update run'}";
     }
+
+    /**
+     * 请求的路径必须唯一
+     */
 }

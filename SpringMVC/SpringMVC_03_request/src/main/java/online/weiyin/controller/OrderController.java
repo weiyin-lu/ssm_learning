@@ -65,7 +65,7 @@ public class OrderController {
 //    get 集合参数
     @RequestMapping("/get6")
     @ResponseBody
-    public String get6(@RequestParam List<String> likes) { //把所有请求的值作为请求参数传递到集合内
+    public String get6(@RequestParam List<String> likes) { //从请求参数列表获得数据
         System.out.println("get集合参数传递" + likes);
         return "{'ret' : 'get6'}";
     }
