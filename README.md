@@ -26,8 +26,9 @@ https://www.bilibili.com/video/BV1Ya411S7aT/
     git clone https://gitee.com/weiyin2002/SSM_learning.git
     ~~~
     或者你也可以直接在gitee页面下载zip包。
-2. 根目录下的每个文件夹代表每个部分课程的项目，可以分别独立导入。在IDEA中新建一个项目，选择“project structure”，导入新项目即可。
-3. 看就完了！
+2. 环境说明：整个项目基于**jdk11**，后期的web开发环境需要部署**tomcat9.X**版本的服务器。使用maven仓库版本为**3.8.6**
+3. 根目录下的每个文件夹代表每个部分课程的项目，可以分别独立导入。在IDEA中新建一个项目，选择“project structure”，导入新项目即可。
+4. 看就完了！
 ***
 ## 目录
 ### Spring
@@ -54,7 +55,7 @@ https://www.bilibili.com/video/BV1Ya411S7aT/
 **14 AOP数据拦截：** 展示了AOP如何获得原始对象的各种数据  
 **15 spring事务：** 一个简单的转账案例，展示了spring事务的基本功能。
 ### SpringMVC
-
+**01 快速开始** 一个最简单的MVC结构的工程，使用注解开发。  
 ### SpringBoot
 
 ### Mybatis
