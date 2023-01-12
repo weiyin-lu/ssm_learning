@@ -33,7 +33,7 @@ public class OrderController {
 //    get 普通参数 键映射
     @RequestMapping("/get2")
     @ResponseBody
-    public String get2(@RequestParam("username") String name, int age) {
+    public String get2(@RequestParam("username") String name, int age) { //从请求参数列表获取参数
         System.out.println("get普通参数传递(绑定)" + name + age);
         return "{'ret' : 'get2'}";
     }
