@@ -18,6 +18,7 @@
         <module name="Spring_07_collectionautowire" />
         <module name="Spring_13_aopuse" />
         <module name="Spring_01_quickstart" />
+        <module name="SpringMVC_03_request" />
         <module name="Spring_12_aop" />
         <module name="Spring_11_SpringPlusJUnit" />
         <module name="SpringMVC_01_quickstart" />
@@ -27,6 +28,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="SpringBoot_01_quickstart" target="11" />
+      <module name="SpringMVC_02_request" target="11" />
       <module name="untitled" target="11" />
     </bytecodeTargetLevel>
   </component>
