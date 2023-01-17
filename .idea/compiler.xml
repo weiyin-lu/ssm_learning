@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Spring_15_transaction" />
         <module name="Spring_08_thirddatasource" />
+        <module name="SpringMVC_04_response" />
         <module name="SpringMVC_02_beancontrol" />
         <module name="Spring_09_annotation" />
         <module name="Spring_10_SpringPlusMybatis" />

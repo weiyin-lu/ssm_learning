@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_02_beancontrol" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_02_request" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_03_request" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_04_response" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -28,6 +29,7 @@
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_01_quickstart/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_02_beancontrol/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_03_request/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_04_response/pom.xml" />
       </list>
     </option>
   </component>
