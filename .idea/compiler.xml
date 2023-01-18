@@ -25,6 +25,7 @@
         <module name="Spring_11_SpringPlusJUnit" />
         <module name="SpringMVC_01_quickstart" />
         <module name="Spring_14_aopdata" />
+        <module name="SpringMVC_05_restful" />
         <module name="Spring_03_instance" />
       </profile>
     </annotationProcessing>
