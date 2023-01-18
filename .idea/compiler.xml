@@ -30,10 +30,5 @@
         <module name="Spring_03_instance" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="SpringBoot_01_quickstart" target="11" />
-      <module name="SpringMVC_02_request" target="11" />
-      <module name="untitled" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
