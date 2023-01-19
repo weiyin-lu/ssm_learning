@@ -24,8 +24,10 @@
         <module name="SpringMVC_03_request" />
         <module name="Spring_12_aop" />
         <module name="Spring_11_SpringPlusJUnit" />
+        <module name="Mybatis_01_quickstart" />
         <module name="SpringMVC_01_quickstart" />
         <module name="Spring_14_aopdata" />
+        <module name="Mybatis_02_config" />
         <module name="SpringMVC_05_restful" />
         <module name="Spring_03_instance" />
       </profile>
