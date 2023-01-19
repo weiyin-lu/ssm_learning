@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--每个namespace必须唯一,与对应的全限定类名一致-->
+<mapper namespace="online.weiyin.mapper.UserMapper">
+
+    <!--
+        传递参数的两种方式：#{}和${}
+        #{}自动拼接SQL，字符串会自动给引号
+        ${}字符串拼接，把传递的值直接放进对应位置
+    -->
+    <select id="selectById" resultType="user">
+        select * from t_user where id = #{id};
+    </select>
+    <select id="selectByAuthorize" resultType="user">
+        select * from t_user where username = #{name} and password = #{pwd}
+    </select>
+    <insert id="insertUser">
+        insert into t_user value(null,#{username},#{password},#{age},#{gender},#{email})
+    </insert>
+</mapper>

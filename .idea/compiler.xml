@@ -27,6 +27,7 @@
         <module name="Mybatis_01_quickstart" />
         <module name="SpringMVC_01_quickstart" />
         <module name="Spring_14_aopdata" />
+        <module name="Mybatis_03_parameter" />
         <module name="Mybatis_02_config" />
         <module name="SpringMVC_05_restful" />
         <module name="Spring_03_instance" />
