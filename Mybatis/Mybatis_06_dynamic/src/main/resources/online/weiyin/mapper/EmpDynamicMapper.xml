@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--suppress ALL -->
+<mapper namespace="online.weiyin.mapper.EmpDynamicMapper">
+
+<!--    动态标签 sql
+        相当于一些快捷片段
+        使用<include refid="" >调用
+-->
+    <sql id="empColumns">
+        emp_id,emp_name,age,gender,dept_id
+    </sql>
+
+    <!--    动态标签 if-->
+<!--    where后边携带一个缺省的条件，可以避免所有条件都没有或者跳过条件时导致的不合法语句
+        也可以使用where标签包裹所有if，该标签动态生成where关键字，并自动过滤where后边产生的第一个and
+        if : 标签内语句生效的条件
+        -->
+<!--    该功能可以实现类似多选查询的功能-->
+<!--    List<Emp> getEmpDynamic(Emp emp);-->
+    <select id="getEmpDynamic" resultType="emp">
+        select <include refid="empColumns" /> from t_emp
+        <where>
+            <!--    常见条件：不为空字符串且不为null-->
+            <if test="empName != '' and empName != null" >
+                and emp_name = #{empName}
+            </if>
+            <if test="age != '' and age != null">
+                and age = #{age}
+            </if>
+            <if test="gender != '' and gender != null">
+                and gender = #{gender}
+            </if>
+        </where>
+    </select>
+
+    <!--    动态标签choose when/otherwise-->
+<!--    choose父标签 when 相当于if/else if（第一个是if，接下来是else if）
+        otherwise相当于else（仅限一个）
+        test : 与if相同-->
+<!--    该标签能实现类似于单选查询的功能-->
+<!--    List<Emp> getEmpDynamicOnce(Emp emp);-->
+    <select id="getEmpDynamicOnce" resultType="emp">
+        select * from t_emp
+        <where>
+            <choose>
+                <when test="empName != '' and empName != null">
+                    emp_name = #{empName}
+                </when>
+                <when test="age != '' and age != null">
+                    age = #{age}
+                </when>
+                <when test="gender != '' and gender != null">
+                    gender = #{gender}
+                </when>
+                <otherwise>
+                    1 = 1
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <!--    动态标签foreach-->
+<!--    foreach默认使用map处理foreach内的集合，如果使用list，就以list为键，以参数为值
+        使用@Param可以修改键
+        collection : 待查数组/集合
+        item : 当前项
+        separator : 每次循环语句之间的分隔符
+        open : 循环开始之前添加的字符串
+        close : 循环结束之后的字符串
+        -->
+<!--    使用foreach配合集合实现的批量增加-->
+<!--    Integer insertEmps(List<Emp> emp);-->
+    <insert id="insertEmps">
+        insert into t_emp values 
+        <foreach collection="emps" item="emp" separator=",">
+            (null, #{emp.empName}, #{emp.age}, #{emp.gender}, null)
+        </foreach>
+    </insert>
+<!--    使用foreach配合数组实现的批量删除-->
+<!--    Integer deleteEmpsById(Integer[] empIds);-->
+    <delete id="deleteEmpsById">
+        delete from t_emp where emp_id in
+        <foreach collection="empIds" item="empId" separator="," open="(" close=")">
+            #{empId}
+        </foreach>
+    </delete>
+<!--        另一种方法，用连续的or条件判断-->
+<!--        delete from t_emp where-->
+<!--        <foreach collection="empIds" item="empId" separator="or">-->
+<!--            emp_id = #{empId}-->
+<!--        </foreach>-->
+</mapper>

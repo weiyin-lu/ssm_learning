@@ -26,6 +26,7 @@
         <module name="SpringMVC_04_response" />
         <module name="SpringMVC_02_beancontrol" />
         <module name="Spring_09_annotation" />
+        <module name="Mybatis_06_dynamic" />
         <module name="Spring_10_SpringPlusMybatis" />
         <module name="Spring_04_lifecycle" />
         <module name="Spring_06_autowire" />
