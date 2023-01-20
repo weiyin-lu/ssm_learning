@@ -34,6 +34,7 @@
         <module name="Spring_11_SpringPlusJUnit" />
         <module name="SpringMVC_01_quickstart" />
         <module name="Mybatis_07_generator" />
+        <module name="Mybatis_08_annotation" />
         <module name="Spring_03_instance" />
       </profile>
     </annotationProcessing>

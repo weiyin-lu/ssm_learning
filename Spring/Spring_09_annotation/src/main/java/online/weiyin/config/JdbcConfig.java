@@ -7,7 +7,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
-@PropertySource("ssm.properties")
+@PropertySource("classpath:ssm.properties") //导入配置文件
 public class JdbcConfig {
 
 //    对自定义第三方bean的普通类型注入
