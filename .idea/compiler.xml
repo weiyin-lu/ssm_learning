@@ -29,6 +29,7 @@
         <module name="Spring_10_SpringPlusMybatis" />
         <module name="Spring_04_lifecycle" />
         <module name="Spring_06_autowire" />
+        <module name="Mybatis_05_result" />
         <module name="Spring_11_SpringPlusJUnit" />
         <module name="SpringMVC_01_quickstart" />
         <module name="Spring_03_instance" />

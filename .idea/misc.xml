@@ -38,6 +38,7 @@
         <option value="$PROJECT_DIR$/Mybatis/Mybatis_02_config/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Mybatis_03_parameter/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Mybatis_04_special/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Mybatis_05_result/pom.xml" />
       </list>
     </option>
   </component>

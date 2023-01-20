@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--suppress ALL -->
+<mapper namespace="online.weiyin.mapper.EmpMapper">
+
+<!--    字段名和属性名不一致的解决方案-->
+<!--    1.给查询字段设置别名
+        2.如果mySQL字段和java类的命名方式分别符合下划线和小驼峰，在mybatis全局配置里设置settings标签自动映射
+        3.自定义结果集resultMap
+-->
+<!--    1.不在mybatis处理，只用别名的写法-->
+<!--    <select id="selectEmpByIdOld" resultType="emp">-->
+<!--        select emp_id empId,emp_name empName,age,gender from t_emp where emp_id = #{empId};-->
+<!--    </select>-->
+<!--    2.使用全局设置，直接用resultType即可-->
+<!--    3.自定义结果集，映射了表字段和类属性的关系-->
+    <resultMap id="empMap" type="emp">
+        <id column="emp_id" property="empId" />
+        <result column="emp_name" property="empName" />
+        <result column="age" property="age" />
+        <result column="gender" property="gender" />
+    </resultMap>
+<!--    结果集的使用-->
+<!--    List<Emp> selectEmpById(@Param("empId") Integer id);-->
+<!--    使用了自定义映射集的语句-->
+    <select id="selectEmpById" resultMap="empMap" >
+        select * from t_emp where emp_id = #{empId};
+    </select>
+
+
+<!--        多表联查-->
+
+    <!--    多表联查的解决方案-->
+    <!--    1.级联查询
+            2.纯association解决
+            3.分步查询(子查询)
+    -->
+
+    <!--    自定义结果集，实现多表联查使用-->
+    <resultMap id="empPlusMap" type="emp">
+        <id column="emp_id" property="empId" />
+        <result column="emp_name" property="empName" />
+        <result column="age" property="age" />
+        <result column="gender" property="gender" />
+<!--        1.级联查询-->
+<!--        <result column="dept_id" property="dept.deptId" />-->
+<!--        <result column="dept_name" property="dept.deptName" />-->
+<!--        2.使用多对一域 也可以处理一对一（处理实体类类型的属性）-->
+        <association property="dept" javaType="Dept" >
+            <id column="dept_id" property="deptId" />
+            <result column="dept_name" property="deptName" />
+        </association>
+    </resultMap>
+<!--    查询命令-->
+<!--    Emp selectEmpAndDeptByEmpId(@Param("empId") Integer id);-->
+    <select id="selectEmpAndDeptByEmpId" resultMap="empPlusMap">
+        select e.emp_id,e.emp_name,e.age,e.gender,d.dept_id,d.dept_name
+        from t_emp e join t_dept d on e.dept_id = d.dept_id
+        where emp_id = #{empId};
+    </select>
+
+<!--    3.分步查询 适用于大型查询 提高效率-->
+    <resultMap id="empMapStep" type="emp">
+        <id column="emp_id" property="empId" />
+        <result column="emp_name" property="empName" />
+        <result column="age" property="age" />
+        <result column="gender" property="gender" />
+<!--
+            fetchType : 设置延迟加载模式，在配置了全局懒加载后可用，设置eager表示当前查询每次都全部加载
+            select : 分步查询下一步的唯一配置标识
+            column : 下一步需要使用的参数，从当前这一步得来
+-->
+        <association property="dept"
+                     fetchType="lazy"
+                     select="online.weiyin.mapper.DeptMapper.getEmpAndDeptToStepTwo"
+                     column="dept_id">
+        </association>
+    </resultMap>
+<!--    分步查询（多对一） 第一步-->
+    <select id="getEmpAndDeptToStepOne" resultMap="empMapStep">
+        select * from t_emp where emp_id = #{empId};
+    </select>
+
+
+<!--    分步查询（一对多） 第二步 第一步在DeptMapper-->
+    <select id="getDeptAndEmpToStepTwo" resultType="emp">
+        select * from t_emp where dept_id = #{deptId};
+    </select>
+
+</mapper>
